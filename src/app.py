@@ -52,7 +52,7 @@ def getOne(member_id):
 @app.route('/member', methods=['POST'])
 def addOne():
     member = request.get_json()
-    if member["age"] <= 0: return jsonify({"msg":"Age must be over 0"}), 400
+    if member["age"] <= 0: return jsonify({"msg":"Pon una edad real"}), 400
     jackson_family.add_member(member)
     return jsonify(member), 200
 
@@ -60,7 +60,7 @@ def addOne():
 def removeOne(member_id):
     member = jackson_family.delete_member(member_id)
     if "msg" in member : return jsonify(member), 400
-    member["done"] = True
+    member["ok"] = True
     return jsonify(member), 200
 
 if __name__ == '__main__':
