@@ -10,9 +10,8 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        if member.get("id") is None
-        member["id"]= self._generateId()
-
+        member["lastname"] = self.last_name
+        if "id" not in member : member["id"] = self._generateId()
         self._members.append(member)
         return member
 
